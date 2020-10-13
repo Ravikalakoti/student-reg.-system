@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+       {%csrf_token%}
+
+
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+      <th>action</th>
+    </tr>
+
+  </thead>
+
+    <tbody>
+
+    {%for i in employee%}
+    <tr>
+        <td>{{i.eid}}</td>
+        <td>{{i.ename}}</td>
+        <td>{{i.eemail}}</td>
+        <td>{{i.econtact}}</td>
+        <td>
+            <a href="edit/{{i.id}}">Edit</a>
+             <a href="delete/{{i.id}}">Delete</a>
+        </td>
+
+
+    </tr>
+    {%endfor%}
+
+</tbody>
+</table>
+         </form>
+
+</div>
+{%endblock%}
